@@ -16,41 +16,30 @@ var Config = function(){
         inputFile: 'root.html',
         outputFile: 'output.txt',
         isDebug: false,
-        setHost: function(_host){
-            this.host = _host;
-        },
-        setPort: function(_port){
-            this.port = _port;
-        },
-        setInputResultPath: function(_path){
-            this.resultPath = _path;
-        },
-        setInputResultFilename: function(_fin){
-            this.inputFile = _fin;
-        },
-        setOutputFile: function(_fout){
-            this.outputFile = _fout;
-        },
-        setEnableDebugMode: function(isEnable){
-            this.isDebug = isEnable;
-        },
+        setHost: function(_host){ this.host = _host; },
+        setPort: function(_port){ this.port = _port; },
+        setInputResultPath: function(_path){ this.resultPath = _path; },
+        setInputResultFilename: function(_fin){ this.inputFile = _fin; },
+        setOutputFile: function(_fout){ this.outputFile = _fout; },
+        setEnableDebugMode: function(isEnable){ this.isDebug = isEnable; },
         getURI: function(){
             return this.host + ':' + this.port + '/' + this.route + '/' + this.resultPath + '/' + this.inputFile;
         },
-        getOutputFile: function(){
-            return this.outputFile;
-        }
+        getOutputFile: function(){ return this.outputFile; }
     };
 };
 
+console.log(argv);
+
 var config = new Config();
 argv.hasOwnProperty('d')?config.setEnableDebugMode(true):console.log('Disable debug mode...');
-argv.hasOwnProperty('h')?config.setHost('argv.h'):console.log('Using default host : ' + config.host);
-argv.hasOwnProperty('p')?config.setPort('argv.p'):console.log('Using default port : ' + config.port);
-argv.hasOwnProperty('r')?config.setInputResultPath('argv.r'):console.log('Using default path : ' + config.resultPath);
-argv.hasOwnProperty('f')?config.setInputResultFilename('argv.f'):console.log('Using default input file name : ' + config.inputFile);
-argv.hasOwnProperty('o')?config.setOutputFile('argv.o'):console.log('Using default output host : ' + config.outputFile);
-if(config.isDebug) console.log(argv);
+argv.hasOwnProperty('h')?config.setHost(argv.h):console.log('Using default host : ' + config.host);
+argv.hasOwnProperty('p')?config.setPort(argv.p):console.log('Using default port : ' + config.port);
+argv.hasOwnProperty('r')?config.setInputResultPath(argv.r):console.log('Using default path : ' + config.resultPath);
+argv.hasOwnProperty('f')?config.setInputResultFilename(argv.f):console.log('Using default input file name : ' + config.inputFile);
+argv.hasOwnProperty('o')?config.setOutputFile(argv.o):console.log('Using default output file name : ' + config.outputFile);
+
+if(config.isDebug) console.log(config);
 
 var uri = config.getURI();
 if(config.isDebug) console.log('URI : ' + uri);

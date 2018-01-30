@@ -1,0 +1,19 @@
+{
+  "name": "standalone_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "standalone",
+    "server"
+  ],
+  "author": "PatharaNor",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
