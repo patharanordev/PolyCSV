@@ -39,8 +39,11 @@ PolyCSV will fetch HTML content from `root.html`. It is default HTML file name. 
 
 3. Enjoy!!!
 
-## Feature
-Add more feature soon...
+## Customize
+   You can add your special feature/function by modified souce file in `src` and convert to `.exe` by yourself with command below :
+   ```
+   pkg [YOUR_JS_FILE] --options expose-gc
+   ```
 
 ## Donation and Support
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A8YE92K9QM7NA)
